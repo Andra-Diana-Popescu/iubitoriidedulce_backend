@@ -100,18 +100,21 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
+      
        // dd('1 update');
         $validatedData = $request->validate([
-            'upc' => 'required|max:255',
+            'upc' => 'required',
             'product_name' => 'required',
             'price_each' => 'required',
             'weight' => 'required',
             'description' => 'required',
             'product_id' => 'required',
-            'category' => 'required',
+           // 'category' => 'required',
             'stock' => 'required',
-            'brand' => 'required'
+            'brand' => 'required',
         ]);
+
+        //dd('ma-ta 2');
         // cauta produsul ce are in interorul sau id -ul respectiva ,daca are
         // actualizeaza cu urmatoarele valori
         Product::whereId($id)->update($validatedData);

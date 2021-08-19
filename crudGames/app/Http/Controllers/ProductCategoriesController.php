@@ -43,6 +43,7 @@ class ProductCategoriesController extends Controller
     public function store(Request $request)
     {
         //
+      
         $validareDate = $request->validate([
             'product_id' => 'required',
             'category_id' => 'required',
